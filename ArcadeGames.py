@@ -1,13 +1,7 @@
-#Arcade Games v2.0
-# Version 1.0:
-### Added RockPaperScissorsV2 and GuessNumberV1 to the Games list
-# Version 2.0:
-### Added the os.system('clear') to clear the screen after each game
-
 import sys
 import random
 from enum import Enum
-import os #To use the os.system('clear') command to clear the screen
+import os
 
 title=" Arcade Games "
 print(title.center(40,"-"))
@@ -61,7 +55,6 @@ def rps():
     ties=0
     
     def play():
-        # Class RPS = Rock,Paper,Scissors
         class RPS(Enum):
             Rock=1
             Paper=2
@@ -80,9 +73,6 @@ def rps():
 
         print(f"\n{player} chose {str(RPS(player1c)).replace('RPS.','')}")
         print(f"The computer chose {str(RPS(comp)).replace('RPS.','')}")
-        #Use the replace() to remove the class name of the output
-        #It's necessary to use the str ocnstructor here, since we're applying it to the enum value
-        #and then calling a string method. It's also not being converted before that happens.
         print()
 
         nonlocal playerwins
@@ -123,7 +113,6 @@ def rps():
         if again in ["quit","q"]:
             print(f"\nFinal Score:\n{player} - Wins:{playerwins} Losses:{playerloss}") 
             print(f"COMPUTER - Wins:{compwins} Losses:{comploss}\nTIES:{ties}")
-            #No need to use the str constructor here anymore, since the f-String don't need it
             if (playerwins > compwins):
                 print(f"\n{player} wins!")
                 print("Congratulations!!!")
@@ -163,8 +152,6 @@ def guessnumber():
         tries=0
             
         compchoice=random.randrange(1,10)
-        #print(f"COMPCHOICE:{compchoice}")   ###Use for debug only
-        #randrange(), specify a range between 1 and 10
         
         gamecount+=1
         
