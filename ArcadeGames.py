@@ -1,7 +1,6 @@
 import sys
 import random
 from enum import Enum
-import os
 
 title=" Arcade Games "
 print(title.center(40,"-"))
@@ -44,7 +43,6 @@ def rps():
     global player
     global welcome_back
     
-    os.system('clear')
     title=(" Rock, Paper, Scissors Game ")
     print(title.center(40,"-"))
     print(f"\nWelcome, {player}!")
@@ -125,12 +123,10 @@ def rps():
             print("\nGAME OVER")
             welcome_back=True
             cont=input("\n\nPress any key to continue...")
-            os.system('clear')
             title=" Arcade Games "
             print(title.center(40,"-"))
             arcade()
         else:
-            os.system('clear')
             print("Restarting...")
             play()
     play()
@@ -140,7 +136,6 @@ def guessnumber():
     global player
     global welcome_back
     
-    os.system('clear')
     title=" Guess the Number "
     print(title.center(40,"-"))
     print(f"\nGreetings, {player}! Welcome to the Guess the Number challenge, here's how to play:")
@@ -178,14 +173,12 @@ def guessnumber():
                         winpercent=round(((playerwins/gamecount)*100),2)
                         print(f"Thank you for playing!\n\nFINAL SCORE:\n{player}'s wins: {playerwins}\nGame count: {gamecount}\nYour win percentage: {winpercent}%\n\nGAME OVER")
                         cont=input("\n\nPress any key to continue...")
-                        os.system('clear')
                         title=" Arcade Games "
                         print(title.center(40,"-"))
                         welcome_back=True
                         arcade()
                     else:
                         tries=0
-                        os.system('clear')
                         play()
                 elif playerguess>compchoice:
                     print("Try a little lower...")
@@ -202,7 +195,6 @@ def guessnumber():
                     winpercent=round(((playerwins/gamecount)*100),2)
                     print(f"\nThank you for playing!\n\n--- FINAL SCORE ---\n{player}'s wins: {playerwins}\nGame count: {gamecount}\nYour win percentage: {winpercent}%\n\nGAME OVER")
                     cont=input("\n\nPress any key to continue...")
-                    os.system('clear')
                     title=" Arcade Games "
                     print(title.center(40,"-"))
                     welcome_back=True
