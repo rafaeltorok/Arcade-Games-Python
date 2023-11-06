@@ -136,14 +136,16 @@ def guessnumber():
     global player
     global welcome_back
     
+    playerwins=0
+    gamecount=0
+    
     title=" Guess the Number "
     print(title.center(40,"-"))
     print(f"\nGreetings, {player}! Welcome to the Guess the Number challenge, here's how to play:")
     print("*Guess a number between 1 and 10\n*You have only 3 tries!")
         
     def play():
-        playerwins=0
-        gamecount=0
+        nonlocal gamecount
         tries=0
             
         compchoice=random.randrange(1,10)
